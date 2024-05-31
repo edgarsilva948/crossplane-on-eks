@@ -521,7 +521,7 @@
 <h1 id="nested-compositions">Nested Compositions<a class="headerlink" href="#nested-compositions" title="Permanent link">&para;</a></h1>
 <p>Compositions can be nested within a composition. Take a look at the example-application defined in the <code>compositions/aws-provider/example-application</code> directory. The Composition contains Compositions defined in other directories and creates a DynamoDB table, IAM policies for the table, a Kubernetes service account, and a IAM role for service accounts (IRSA). This pattern is very powerful. It let you define your abstraction based on someone else's prior work.</p>
 <p>An example yaml file to deploy this Composition is available at  <code>examples/aws-provider/composite-resources/example-application/example-application.yaml</code>.  </p>
-<p>Install the AWS Compositions and XRDs following the instructions in <a href="../compositions/README.md">compositions/README.md</a></p>
+<p>Install the AWS Compositions and XRDs following the instructions in <a href="../../compositions/README.md">compositions/README.md</a></p>
 <p>Let’s take a look at how this example application can be deployed. </p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl<span class="w"> </span>create<span class="w"> </span>ns<span class="w"> </span>example-app
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># namespace/example-app created</span>
