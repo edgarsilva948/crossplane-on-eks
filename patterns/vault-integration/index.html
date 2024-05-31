@@ -609,7 +609,7 @@
 <p>Note:
 - As of Crossplane 1.9.0, the support for external secret store is still in alpha state and may go under changes.
 - This assumes a use case for single-cluster multi-tenant. However, the underlying concepts discussed here should be applicable to multi-cluster setup as well.
-- This doc is based on the excellent <a href="https://github.com/crossplane/crossplane/blob/master/docs/guides/vault-as-secret-store.md#prepare-vault">vault secret store guide</a> and <a href="https://learn.hashicorp.com/tutorials/vault/kubernetes-external-vault">external vault configuration guide</a>. Please check these guides out for more detailed information. </p>
+- This doc is based on the excellent <a href="https://learn.hashicorp.com/tutorials/vault/kubernetes-external-vault">external vault configuration guide</a>. Please check these guides out for more detailed information. </p>
 <h1 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">&para;</a></h1>
 <h2 id="provision-a-eks-cluster">Provision a EKS cluster<a class="headerlink" href="#provision-a-eks-cluster" title="Permanent link">&para;</a></h2>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># from this repository root</span>
@@ -721,7 +721,7 @@
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span>--set-string<span class="w"> </span>customAnnotations.<span class="s2">&quot;vault\.hashicorp\.com/agent-run-as-user&quot;</span><span class="o">=</span><span class="m">65532</span>
 </span></code></pre></div>
 <p>Once Crossplane is installed, install its AWS provider. </p>
-<p>Update the <a href="../bootstrap/eksctl/crossplane/aws-provider-vault-secret.yaml">AWS provider YAML file</a> with your role ARN, then execute the following commands.</p>
+<p>Update the <a href="../../bootstrap/eksctl/crossplane/aws-provider-vault-secret.yaml">AWS provider YAML file</a> with your role ARN, then execute the following commands.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>bootstrap/eksctl/crossplane/aws-provider-vault-secret.yaml
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>kubectl<span class="w"> </span>get<span class="w"> </span>ProviderRevision
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># example output</span>
@@ -729,7 +729,7 @@
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># provider-aws-a2e16ca2fc1a   True      1          crossplane/provider-aws:v0.29.0   Active                               23s</span>
 </span></code></pre></div>
 <p><code>StoreConfig</code> objects provides Crossplane and its providers information about how to connect to secret stores. These objects must be configured for external secret integrations to work.</p>
-<p>Update the <a href="../bootstrap/eksctl/crossplane/store-config-vault.yaml">store config YAML file</a> with your endpoint information. If you configured vault outside of the cluster, it should be the private IP address. e.g. <code>10.0.0.1:8200</code></p>
+<p>Update the <a href="../../bootstrap/eksctl/crossplane/store-config-vault.yaml">store config YAML file</a> with your endpoint information. If you configured vault outside of the cluster, it should be the private IP address. e.g. <code>10.0.0.1:8200</code></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>bootstrap/eksctl/crossplane/store-config-vault.yaml
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;apiVersion: aws.crossplane.io/v1beta1</span>
@@ -763,7 +763,7 @@ Then inspect the events for the bucket:
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1">#  ----     ------                   ----              ----                                 -------</span>
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1">#  Warning  CannotConnectToProvider  1s (x5 over 14s)  managed/bucket.s3.aws.crossplane.io  cannot get referenced Provider: ProviderConfig.aws.crossplane.io &quot;default-provider-config&quot; not found</span>
 </span></code></pre></div>
-In the <a href="../examples/aws-provider/composite-resources/s3/multi-tenant.yaml">claim file</a>, we specify a provider config name. However, this is patched out to use the provider config with name <code>&lt;NAMESPACE&gt;-provider-config</code>. This is why the error message indicates provider config with name <code>default-provider-config</code> is not found. </p>
+In the <a href="../../examples/aws-provider/composite-resources/s3/multi-tenant.yaml">claim file</a>, we specify a provider config name. However, this is patched out to use the provider config with name <code>&lt;NAMESPACE&gt;-provider-config</code>. This is why the error message indicates provider config with name <code>default-provider-config</code> is not found. </p>
 <p>Since we created a provider config named <code>application1-provider-config</code>, we should be able to create a claim in namespace called application1. </p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">#create namespace</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>kubectl<span class="w"> </span>create<span class="w"> </span>ns<span class="w"> </span>application1<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
