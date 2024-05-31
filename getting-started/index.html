@@ -673,10 +673,12 @@
 <h3 id="terraform">terraform<a class="headerlink" href="#terraform" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>For consuming Crossplane Blueprints, please see the <a href="">Consumption</a> section. </p>
+<p>For consuming Crossplane Blueprints, please see the <a href="https://awslabs.github.io/crossplane-on-eks/#getting-started">Getting Started</a> section. For exploring and trying out the patterns provided, please
+clone the project locally to quickly get up and running with a pattern. After cloning the project locally, <code>cd</code> into the pattern
+directory of your choice.</p>
 </li>
 <li>
-<p>To bootstrap using terraform, the typical steps of execution are as follows:</p>
+<p>To provision the pattern, the typical steps of execution are as follows:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>terraform<span class="w"> </span>init
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.vpc&quot;</span><span class="w"> </span>-auto-approve
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>terraform<span class="w"> </span>apply<span class="w"> </span>-target<span class="o">=</span><span class="s2">&quot;module.eks&quot;</span><span class="w"> </span>-auto-approve
@@ -688,7 +690,7 @@
 <li>
 <p>Once all of the resources have successfully been provisioned, the following command can be used to update the <code>kubeconfig</code>
 on your local machine and allow you to interact with your EKS Cluster using <code>kubectl</code>.</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>aws<span class="w"> </span>eks<span class="w"> </span>--region<span class="w"> </span>&lt;REGION&gt;<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span>&lt;CLUSTER_NAME&gt;
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>aws<span class="w"> </span>eks<span class="w"> </span>--region<span class="w"> </span>&lt;REGION&gt;<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span>&lt;CLUSTER_NAME&gt;<span class="w"> </span>--alias<span class="w"> </span>&lt;CLUSTER_NAME&gt;
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Terraform outputs</p>
