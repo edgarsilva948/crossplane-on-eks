@@ -10,10 +10,14 @@
         <meta name="author" content="AWS">
       
       
+        <link rel="canonical" href="https://awslabs.github.io/crossplane-on-eks/">
       
       
       
-      <link rel="icon" href="/crossplane-on-eks/images/colored-logo.png">
+        <link rel="next" href="getting-started/">
+      
+      
+      <link rel="icon" href="images/colored-logo.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
@@ -22,10 +26,10 @@
       
     
     
-      <link rel="stylesheet" href="/crossplane-on-eks/assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="/crossplane-on-eks/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -85,7 +89,7 @@
       
     
     
-    <script>__md_scope=new URL("/crossplane-on-eks/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -108,6 +112,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#blueprints-for-crossplane-on-amazon-eks" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -124,9 +133,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/crossplane-on-eks/." title="Amazon Crossplane Blueprints" class="md-header__button md-logo" aria-label="Amazon Crossplane Blueprints" data-md-component="logo">
+    <a href="." title="Amazon Crossplane Blueprints" class="md-header__button md-logo" aria-label="Amazon Crossplane Blueprints" data-md-component="logo">
       
-  <img src="/crossplane-on-eks/images/white-logo.png" alt="logo">
+  <img src="images/white-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -143,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Overview
             
           </span>
         </div>
@@ -230,9 +239,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/crossplane-on-eks/." title="Amazon Crossplane Blueprints" class="md-nav__button md-logo" aria-label="Amazon Crossplane Blueprints" data-md-component="logo">
+    <a href="." title="Amazon Crossplane Blueprints" class="md-nav__button md-logo" aria-label="Amazon Crossplane Blueprints" data-md-component="logo">
       
-  <img src="/crossplane-on-eks/images/white-logo.png" alt="logo">
+  <img src="images/white-logo.png" alt="logo">
 
     </a>
     Amazon Crossplane Blueprints
@@ -256,10 +265,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/crossplane-on-eks/." class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -268,6 +297,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adopters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adopters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -279,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/crossplane-on-eks/getting-started/" class="md-nav__link">
+      <a href="getting-started/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -334,7 +455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/crossplane-on-eks/patterns/debugging/" class="md-nav__link">
+      <a href="patterns/debugging/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -355,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/crossplane-on-eks/patterns/nested-compositions/" class="md-nav__link">
+      <a href="patterns/nested-compositions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -376,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/crossplane-on-eks/patterns/patching-101/" class="md-nav__link">
+      <a href="patterns/patching-101/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -397,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/crossplane-on-eks/patterns/rds-day-2/" class="md-nav__link">
+      <a href="patterns/rds-day-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -418,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/crossplane-on-eks/patterns/vault-integration/" class="md-nav__link">
+      <a href="patterns/vault-integration/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -446,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/crossplane-on-eks/faq/" class="md-nav__link">
+      <a href="faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -476,6 +597,88 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learn-more" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learn More
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adopters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adopters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -487,8 +690,101 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<!-- BEGIN INCLUDE ../README.md -->
+<h1 id="blueprints-for-crossplane-on-amazon-eks">Blueprints for Crossplane on Amazon EKS<a class="headerlink" href="#blueprints-for-crossplane-on-amazon-eks" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Note</strong>: AWS Blueprints for Crossplane on Amazon Elastic Kubernetes Service is under active development and should be considered a pre-production framework.</p>
+</blockquote>
+<p>Welcome to the AWS Crossplane Blueprints.</p>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p><a href="https://aws.amazon.com/">AWS</a> Crossplane Blueprints is an open source repo to bootstrap Amazon Elastic Kubernetes Service Clusters.
+and provision AWS resources with a library of <a href="https://crossplane.io/docs/master/concepts/composition.html">Crossplane Compositions (XRs)</a> with Composite Resource Definitions (XRDs).</p>
+<p>If you are new to Crossplane, it is highly recommended to get yourself familiarized with Crossplane concepts. The <a href="https://docs.crossplane.io/master/getting-started/introduction/">official documentation</a> and this <a href="https://blog.upbound.io/crossplane-first-look/">blog post</a> are good starting points. </p>
+<p>Compositions in this repository enable platform teams to define and offer bespoke AWS infrastructure APIs to the teams of application developers based on
+predefined <a href="https://crossplane.io/docs/master/concepts/composition.html">Composite Resources (XRs)</a>, encompassing one or more of AWS <a href="https://crossplane.io/docs/master/concepts/managed-resources.html">Managed Resources (MRs)</a></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
+<p>✅   Bootstrap <a href="https://aws.amazon.com/eks/">Amazon EKS</a> Cluster and Crossplane with <a href="https://www.terraform.io/">Terraform</a> \
+✅   Bootstrap <a href="https://aws.amazon.com/eks/">Amazon EKS</a> Cluster and Crossplane with <a href="https://eksctl.io/">eksctl</a> \
+✅   <a href="https://github.com/crossplane/provider-aws">AWS Provider</a> - Crossplane Compositions for AWS Services \
+✅   <a href="https://github.com/upbound/provider-aws">Upbound AWS Provider</a> - Upbound Crossplane Compositions for AWS Services \
+✅   <a href="https://github.com/crossplane/provider-aws/blob/master/AUTHENTICATION.md#using-iam-roles-for-serviceaccounts">AWS IRSA on EKS</a> - AWS Provider Config with IRSA enabled  \
+✅ <a href="../doc/patching-101.md">Patching 101</a> - Learn how patches work.
+✅   Example deployment patterns for <a href="https://crossplane.io/docs/master/concepts/composition.html">Composite Resources (XRs)</a> for AWS Provider\
+✅   Example deployment patterns for <a href="https://crossplane.io/docs/master/concepts/managed-resources.html">Crossplane Managed Resources (MRs)</a></p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>✅   Bootstrap EKS Cluster</p>
+<p>This repo provides multiple options to bootstrap Amazon EKS Clusters with Crossplane and AWS Providers.
+Checkout the following README for full deployment configuration</p>
+<ul>
+<li><a href="../bootstrap/eksctl/README.md">Bootstrap EKS Cluster with eksctl</a></li>
+<li><a href="../bootstrap/terraform/README.md">Bootstrap EKS Cluster with Terraform</a></li>
+</ul>
+<p>✅   Configure the EKS cluster</p>
+<p>Enable IRSA support for your EKS cluster for the necessary permissions to spin up other AWS services.
+Depending on the provider, refer to the bootstrap README for this configuration.</p>
+<ul>
+<li><a href="https://github.com/crossplane/provider-aws">AWS Provider</a> - Crossplane Compositions for AWS Services</li>
+<li><a href="https://github.com/upbound/provider-aws">Upbound AWS Provider</a> - Upbound Crossplane Compositions for AWS Services</li>
+</ul>
+<p>✅   Deploy the Examples</p>
+<p>With the setup complete, you can then follow instructions on deploying
+crossplane compositions or managed resources you want to experiment with. Keep
+in mind that the list of compositions and managed resources in this repository
+are evolving.</p>
+<ul>
+<li>Deploy the Examples by following <a href="../examples/aws-provider/README.md">this README</a></li>
+</ul>
+<p>✅   Work with nested compositions.</p>
+<p>Compositions can be nested to further define and abstract application specific needs.</p>
+<ul>
+<li>Take a quick tour of a <a href="../doc/nested-compositions.md">nested composition example</a></li>
+</ul>
+<p>✅   Work with external secrets.</p>
+<p>Crossplane can be configured to publish secrets external to the cluster in which it runs. </p>
+<ul>
+<li>Try it out with <a href="../doc/vault-integration.md">this guide</a></li>
+</ul>
+<p>✅   Check out the <a href="../doc/rds-day-2.md">RDS day 2 operation doc</a> </p>
+<p>✅   Checkout example <a href="../examples/gatekeeper/">Gatekeeper configurations</a>.</p>
+<p>✅   Upbound AWS provider examples</p>
+<ul>
+<li>Deploy the Examples by following <a href="../examples/upbound-aws-provider/README.md">this README</a></li>
+</ul>
+<h2 id="learn-more">Learn More<a class="headerlink" href="#learn-more" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://aws.amazon.com/eks/">Amazon EKS</a></li>
+<li><a href="https://crossplane.io/">Crossplane</a></li>
+<li><a href="https://github.com/crossplane/provider-aws">AWS Provider</a> for Crossplane</li>
+<li><a href="https://doc.crds.dev/github.com/crossplane/provider-aws">API Docs</a> provider-aws</li>
+</ul>
+<h2 id="debugging">Debugging<a class="headerlink" href="#debugging" title="Permanent link">&para;</a></h2>
+<p>For debugging Compositions, CompositionResourceDefinitions, etc, <a href="../doc/debugging.md">please see the debugging guide</a>.</p>
+<h2 id="adopters">Adopters<a class="headerlink" href="#adopters" title="Permanent link">&para;</a></h2>
+<p>A list of publicly known users of the Crossplane Blueprints for Amazon EKS project can be found in <a href="../ADOPTERS.md">ADOPTERS.md</a>.</p>
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<p>See <a href="../CONTRIBUTING.md#security-issue-notifications">CONTRIBUTING</a> for more information.</p>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This library is licensed under the Apache 2.0 License.</p>
+<!-- END INCLUDE -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -526,10 +822,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/crossplane-on-eks/", "features": ["navigation.tabs.sticky"], "search": "/crossplane-on-eks/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs.sticky"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="/crossplane-on-eks/assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
     
   </body>
